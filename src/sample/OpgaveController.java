@@ -54,8 +54,7 @@ public class OpgaveController implements Initializable {
 
 
     public ObservableList<Opgaver> Opgaveliste = FXCollections.observableArrayList(
-            new Opgaver("tom", "ben", 12345678, "Høj"),
-            new Opgaver("tom", "ben", 12345678, "lav")
+
     );
 
 
@@ -109,6 +108,20 @@ public class OpgaveController implements Initializable {
     public void Nyside(ActionEvent actionEvent) {
         Opgaver opgave = new Opgaver(opgavetekst1.getText(), krav1.getText(),Integer.parseInt(tidsestimat1.getText()),Prioritetsniveau1.getText());
         tableViewOpgaver.getItems().add(opgave);
+    }
+
+    public void updatedata(Opgaver opgaver){
+        opgaver.setOpgavetekst(opgavetekst1.getText());
+        opgaver.setKrav(krav1.getText());
+        opgaver.setEstimat(Integer.parseInt(tidsestimat1.getText()));
+        opgaver.setPrioritetsniveau(Prioritetsniveau1.getText());
+
+
+
+
+
+
+
     }
 
     public void Slet(ActionEvent event)

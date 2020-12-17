@@ -3,6 +3,7 @@ package sample;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
@@ -12,7 +13,14 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.metoder.Kunde;
 
-public class Main extends Application {
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
+import java.io.File;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+
+public class Main extends Application  {
     private double xOffset = 0;
     private double yOffset = 0;
 
@@ -45,8 +53,13 @@ public class Main extends Application {
 
 
 
+
         primaryStage.show();
     }
+
+
+
+
 
     public static void main(String[] args) {
         launch(args);

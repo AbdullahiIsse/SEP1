@@ -23,6 +23,7 @@ import sample.metoder.Teammedlem;
 
 import javax.crypto.Mac;
 import javax.swing.*;
+import javax.xml.stream.XMLInputFactory;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -64,10 +65,7 @@ public class TeamMedlemController implements Initializable {
     }
 
     public ObservableList<Teammedlem> list = FXCollections.observableArrayList(
-            new Teammedlem("tom", "ben", "hej", 10, 200),
-            new Teammedlem("tom", "ben", "hej", 10, 200),
-            new Teammedlem("tom", "ben", "hej", 10, 200),
-            new Teammedlem("tom", "ben", "hej", 10, 200)
+
     );
 
     public void initialize(URL location, ResourceBundle rb) {
@@ -111,6 +109,7 @@ public class TeamMedlemController implements Initializable {
     public void Editfornavn(TableColumn.CellEditEvent<Teammedlem, String> teammedlemStringCellEditEvent) {
         Teammedlem teammedlem=tableTeammedlem.getSelectionModel().getSelectedItem();
         teammedlem.setFornavn(teammedlemStringCellEditEvent.getNewValue());
+
     }
 
     public void editefternavn(TableColumn.CellEditEvent<Teammedlem, String> teammedlemStringCellEditEvent) {
@@ -172,13 +171,19 @@ public class TeamMedlemController implements Initializable {
             FileWriter fileWriter;
 
             fileWriter = new FileWriter(file);
-            fileWriter.write(String.valueOf(teammedlem));
+            fileWriter.write(String.valueOf(Teammedlem));
             fileWriter.close();
         } catch (IOException ex) {
             Logger.getLogger(Teammedlem.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+
+
     }
+
+
+
+
 
 
 

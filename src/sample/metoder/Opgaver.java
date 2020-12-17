@@ -1,5 +1,6 @@
 package sample.metoder;
 
+
 public class Opgaver {
     private String opgavetekst;
     private String krav;

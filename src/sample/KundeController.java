@@ -7,10 +7,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseEvent;
@@ -23,6 +20,9 @@ import sample.metoder.Opgaver;
 import sample.metoder.Teammedlem;
 
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.stream.XMLEventReader;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -44,6 +44,7 @@ public class KundeController implements Initializable {
     @FXML private TableColumn<Kunde,String>Efternavn;
     @FXML private TableColumn<Kunde, Integer> Telefonnummer;
     private Window primaryStage;
+    private Kunde Kunde;
 
 
     public void loadback(ActionEvent actionEvent) throws IOException {
@@ -58,10 +59,7 @@ public class KundeController implements Initializable {
     }
 
     public ObservableList<Kunde>list = FXCollections.observableArrayList(
-            new Kunde("tom","ben", 12345678),
-            new Kunde("tom","ben", 12345678),
-            new Kunde("tom","ben", 12345678),
-            new Kunde("tom","ben", 12345678)
+
 
     );
 
@@ -118,27 +116,29 @@ public class KundeController implements Initializable {
         sletOpgaver=table.getSelectionModel().getSelectedItems();
         sletOpgaver.forEach(sletOpgave::remove);
     }
-
     public void save(ActionEvent actionEvent) {
+
         FileChooser fileChooser = new FileChooser();
 
 
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("XMl files (*.xml)", "*.xml");
         fileChooser.getExtensionFilters().add(extFilter);
 
 
         File file = fileChooser.showSaveDialog(primaryStage);
 
         if(file != null){
-            SaveFile(table, file);
+            SaveFile(Kunde, file);
         }
-
-
-
 
     }
 
-    private void SaveFile(TableView<Kunde> table, File file) {
+
+
+
+
+    private void SaveFile(sample.metoder.Kunde table, File file) {
+
         try {
             FileWriter fileWriter;
 
