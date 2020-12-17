@@ -33,9 +33,9 @@ import java.util.logging.Logger;
 
 
 public class KundeController implements Initializable {
-    public TextField fornavn1;
-    public TextField efternavn1;
-    public TextField telefonnummer1;
+    @FXML public TextField fornavn1;
+    @FXML public TextField efternavn1;
+    @FXML public TextField telefonnummer1;
     @FXML
     private AnchorPane rootpane;
 
@@ -43,7 +43,7 @@ public class KundeController implements Initializable {
     @FXML private TableColumn<Kunde,String>Fornavn;
     @FXML private TableColumn<Kunde,String>Efternavn;
     @FXML private TableColumn<Kunde, Integer> Telefonnummer;
-
+    private Window primaryStage;
     private Kunde Kunde;
 
 
@@ -118,7 +118,18 @@ public class KundeController implements Initializable {
     }
     public void save(ActionEvent actionEvent) {
 
+        FileChooser fileChooser = new FileChooser();
 
+
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("XMl files (*.xml)", "*.xml");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+
+        File file = fileChooser.showSaveDialog(primaryStage);
+
+        if(file != null){
+            SaveFile(Kunde, file);
+        }
 
     }
 
@@ -126,5 +137,19 @@ public class KundeController implements Initializable {
 
 
 
+    private void SaveFile(sample.metoder.Kunde table, File file) {
 
+        try {
+            FileWriter fileWriter;
+
+            fileWriter = new FileWriter(file);
+            fileWriter.write(String.valueOf(table));
+            fileWriter.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Kunde.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+
+    }
 }

@@ -14,7 +14,7 @@ import java.io.IOException;
 public class forsideController {
     @FXML
     private AnchorPane rootpane;
-    @FXML
+
 
 
     public void load1(javafx.event.ActionEvent actionEvent) throws IOException {

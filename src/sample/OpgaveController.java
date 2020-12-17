@@ -32,11 +32,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class OpgaveController implements Initializable {
-    public TextField opgavetekst1;
-    public TextField krav1;
-    public TextField tidsestimat1;
-    public TextField Prioritetsniveau1;
-    public Button slet;
+    @FXML public TextField opgavetekst1;
+    @FXML public TextField krav1;
+    @FXML public TextField tidsestimat1;
+    @FXML public TextField Prioritetsniveau1;
+    @FXML public Button slet;
     @FXML
     private AnchorPane rootpane;
     @FXML
@@ -49,7 +49,8 @@ public class OpgaveController implements Initializable {
     private TableColumn<Opgaver, Integer> estimat;
     @FXML
     private TableColumn<Opgaver, String> prioritetsniveau;
-
+    private Window primaryStage;
+    private Opgaver opgaver;
 
 
 
@@ -134,10 +135,37 @@ public class OpgaveController implements Initializable {
 
     public void save(ActionEvent  opgaven ) {
 
+        FileChooser fileChooser = new FileChooser();
 
+
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("XMl files (*.xml)", "*.xml");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+
+        File file = fileChooser.showSaveDialog(primaryStage);
+
+        if(file != null){
+            SaveFile(tableViewOpgaver, file);
+        }
     }
 
+    private void SaveFile(TableView<Opgaver> tableViewOpgaver, File file) {
+        try {
+            FileWriter fileWriter;
 
+            fileWriter = new FileWriter(file);
+            fileWriter.write(String.valueOf(opgaver));
+            fileWriter.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Opgaver.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+
+
+
+
+    }
 }
 
 

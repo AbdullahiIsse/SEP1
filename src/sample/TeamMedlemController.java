@@ -35,11 +35,11 @@ import java.util.logging.Logger;
 
 
 public class TeamMedlemController implements Initializable {
-    public TextField Efternavn1;
-    public TextField Fornavn1;
-    public TextField Rolle1;
-    public TextField Tel1;
-    public TextField teamID1;
+    @FXML public TextField Efternavn1;
+    @FXML public TextField Fornavn1;
+    @FXML public TextField Rolle1;
+    @FXML public TextField Tel1;
+    @FXML public TextField teamID1;
     @FXML
     private AnchorPane rootpane;
     @FXML
@@ -54,6 +54,7 @@ public class TeamMedlemController implements Initializable {
     private TableColumn<Teammedlem, Integer> Telefonnummer;
     @FXML
     private TableColumn<Teammedlem, Integer> TeammedlemId;
+    private Window primaryStage;
     private Teammedlem Teammedlem;
 
 
@@ -148,10 +149,37 @@ public class TeamMedlemController implements Initializable {
 
     public void save(ActionEvent actionEvent) {
 
+        FileChooser fileChooser = new FileChooser();
+
+
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("XMl files (*.xml)", "*.xml");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+
+        File file = fileChooser.showSaveDialog(primaryStage);
+
+        if(file != null){
+            SaveFile(Teammedlem, file);
+        }
 
     }
 
+    private void SaveFile(sample.metoder.Teammedlem teammedlem, File file) {
 
+
+        try {
+            FileWriter fileWriter;
+
+            fileWriter = new FileWriter(file);
+            fileWriter.write(String.valueOf(teammedlem));
+            fileWriter.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Teammedlem.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+
+    }
 
 
 
