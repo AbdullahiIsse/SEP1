@@ -15,8 +15,9 @@ import java.io.IOException;
 
 public class Scrummaster {
     @FXML private AnchorPane rootpane;
+    Alert a = new Alert(Alert.AlertType.NONE);
 
-   public void loadback(ActionEvent actionEvent) throws IOException {
+    public void loadback(ActionEvent actionEvent) throws IOException {
 
        AnchorPane pane = FXMLLoader.load(getClass().getResource(
                "gui/sample.fxml"));
@@ -54,10 +55,14 @@ public class Scrummaster {
 
     public void mousedragged(MouseEvent mouseEvent) throws InterruptedException {
 
-       Notifications.create()
-               .title("Color IT")
-               .text("SE VORES HJEMMESIDE FOR MERE INFO").darkStyle().showWarning();
+
+        a.setAlertType(Alert.AlertType.INFORMATION);
+
+
+        a.setContentText("Læs mere på vores hjemmeside");
+
+
+        a.show();
+
     }
-
-
-}
+    }

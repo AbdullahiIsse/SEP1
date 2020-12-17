@@ -54,7 +54,6 @@ public class TeamMedlemController implements Initializable {
     private TableColumn<Teammedlem, Integer> Telefonnummer;
     @FXML
     private TableColumn<Teammedlem, Integer> TeammedlemId;
-    private Window primaryStage;
     private Teammedlem Teammedlem;
 
 
@@ -149,37 +148,10 @@ public class TeamMedlemController implements Initializable {
 
     public void save(ActionEvent actionEvent) {
 
-        FileChooser fileChooser = new FileChooser();
-
-
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("XMl files (*.xml)", "*.xml");
-        fileChooser.getExtensionFilters().add(extFilter);
-
-
-        File file = fileChooser.showSaveDialog(primaryStage);
-
-        if(file != null){
-            SaveFile(Teammedlem, file);
-        }
 
     }
 
-    private void SaveFile(sample.metoder.Teammedlem teammedlem, File file) {
 
-
-        try {
-            FileWriter fileWriter;
-
-            fileWriter = new FileWriter(file);
-            fileWriter.write(String.valueOf(Teammedlem));
-            fileWriter.close();
-        } catch (IOException ex) {
-            Logger.getLogger(Teammedlem.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-
-
-    }
 
 
 

@@ -49,7 +49,7 @@ public class OpgaveController implements Initializable {
     private TableColumn<Opgaver, Integer> estimat;
     @FXML
     private TableColumn<Opgaver, String> prioritetsniveau;
-    private Window primaryStage;
+
 
 
 
@@ -134,37 +134,10 @@ public class OpgaveController implements Initializable {
 
     public void save(ActionEvent  opgaven ) {
 
-        FileChooser fileChooser = new FileChooser();
-
-
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("XMl files (*.xml)", "*.xml");
-        fileChooser.getExtensionFilters().add(extFilter);
-
-
-        File file = fileChooser.showSaveDialog(primaryStage);
-
-        if(file != null){
-            SaveFile(tableViewOpgaver, file);
-        }
-    }
-
-    private void SaveFile(TableView<Opgaver> tableViewOpgaver, File file) {
-        try {
-            FileWriter fileWriter;
-
-            fileWriter = new FileWriter(file);
-            fileWriter.write(String.valueOf(tableViewOpgaver));
-            fileWriter.close();
-        } catch (IOException ex) {
-            Logger.getLogger(Opgaver.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-
-
-
-
 
     }
+
+
 }
 
 
