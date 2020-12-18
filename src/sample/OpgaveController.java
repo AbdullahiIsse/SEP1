@@ -107,8 +107,14 @@ public class OpgaveController implements Initializable {
     }
 
     public void Nyside(ActionEvent actionEvent) {
-        Opgaver opgave = new Opgaver(opgavetekst1.getText(), krav1.getText(),Integer.parseInt(tidsestimat1.getText()),Prioritetsniveau1.getText());
+
+        Opgaver opgave = new Opgaver(opgavetekst1.getText(),
+                krav1.getText(),
+                Integer.parseInt(tidsestimat1.getText()),
+                Prioritetsniveau1.getText());
+
         tableViewOpgaver.getItems().add(opgave);
+
     }
 
     public void updatedata(Opgaver opgaver){
