@@ -1,9 +1,8 @@
 package sample.metoder;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "Kunde")
+
+
 public class Kunde
 {
   private String Fornavn, Efternavn;
@@ -15,7 +14,7 @@ public class Kunde
     Efternavn = efternavn;
     Telefonnummer = telefonnummer;
   }
-  @XmlElement(name = "Fornavn")
+
   public String getFornavn() {
     return Fornavn;
   }
@@ -23,7 +22,7 @@ public class Kunde
   public void setFornavn(String fornavn) {
     Fornavn = fornavn;
   }
-  @XmlElement(name = "Efternavn")
+
   public String getEfternavn() {
     return Efternavn;
   }
@@ -31,7 +30,7 @@ public class Kunde
   public void setEfternavn(String efternavn) {
     Efternavn = efternavn;
   }
-  @XmlElement(name = "Telefonnummer")
+
   public int getTelefonnummer() {
     return Telefonnummer;
   }

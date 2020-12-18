@@ -16,13 +16,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Window;
 import javafx.util.converter.IntegerStringConverter;
 import sample.metoder.Kunde;
-import sample.metoder.Opgaver;
-import sample.metoder.Teammedlem;
 
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Unmarshaller;
-import javax.xml.stream.XMLEventReader;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
