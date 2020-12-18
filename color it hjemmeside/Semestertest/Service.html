@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Service</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+	</script>
+	<link href="css/style.css" type="text/css" rel="stylesheet">
+	<script  src="js/script.js">
+	</script>
+</head>
+
+<body>
+	<!-- Lennart: Dette er vores navigationsbar, samt en funktion, som gør at vores navbar collapser ved trykket på en knap, således at den er responsive ved en mindre skærm visning -->
+	<nav class="navbar navbar-expand-md sticky-top bg-dark navbar-dark">
+		<a class="navbar-brand" href="index.html">
+      <!-- Lennart: Vores logo -->
+			<img src="images/Logo1.png" alt="logo">Colour IT</a>
+      	<!-- Lennart: Dette er vores toggle, den har den funktion at  collapse vores navigationsbar når der bliver trykket på den og gør at den bliver responsive ved en mindre skærm visning -->
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="index.html">Hjem</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="Service.html">Service</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="Udviklingsteamet.html">Udviklingsteamet</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="Projekter.html">Projekter</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="Kontakt.html">Kontakt</a>
+               </li>
+            </ul>
+            <!-- Lennart: her er vores søgningsbar -->
+            <form class="form-inline my-2 my-lg-0">
+               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Søg</button>
+            </form>
+         </div>
+      </nav>
+
+<!-- Mark Her har vi Brugt Card funktionen i bootstrap så vi kan lave en overskuelig webside-->
+      <div class="container">
+  <h1 class="display-4">Service</h1>
+  <p>Her på siden kan du se hvilken nogle opgaver og hvad for nogle servicer vi udbyder</p>
+  <br>
+      </div>
+
+      <div class="container">
+         <div class="card-deck">
+            <div class="card">
+               <img class="card-img-top" src="images/Python.png" alt="Card image cap">
+               <div class="card-body">
+                  <h5 class="card-title">Python </h5>
+                  <p class="card-text">Python er et dynamisk og fortolket platformsuafhængigt programmeringssprog, oprindeligt udviklet af hollænderen Guido van Rossum</p>
+                  <p class="card-text"><small class="text-muted">Sidst opdateret for 1 minutter siden</small></p>
+               </div>
+            </div>
+            <div class="card">
+               <img class="card-img-top" src="images/java.jpg" alt="Card image cap">
+               <div class="card-body">
+                  <h5 class="card-title">Java</h5>
+                  <p class="card-text"> Java er et sæt computersoftware og specifikationer udviklet af James Gosling hos Sun Microsystems, som senere blev erhvervet af Oracle Corporation, der leverer et system til at udvikle applikationssoftware og distribuere det i et computermiljø på tværs af platforme</p>
+                  <p class="card-text"><small class="text-muted">Sidst opdateret for 1 minutter siden</small></p>
+               </div>
+            </div>
+            <div class="card">
+               <img class="card-img-top" src="images/phone.png" alt="Card image cap">
+               <div class="card-body">
+                  <h5 class="card-title">Brackets</h5>
+                  <p class="card-text"> Brackets er en kildekodeditor med primært fokus på webudvikling. Oprettet af Adobe Systems er det gratis og open source-software licenseret under MIT-licensen og vedligeholdes i øjeblikket på GitHub af Adobe og andre open source-udviklere. Det er skrevet i JavaScript, HTML og CSS.
+                  </p>
+                  <p class="card-text"><small class="text-muted">Sidst opdateret for 1 minutter siden</small></p>
+               </div>
+            </div>
+         </div>
+      </div>
+     
+
+      <br>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <!-- Lennart: Vores footer. Vha. af vores classer, bliver de kaldt i vores bootstrap fil og style.css -->
+      <footer class="mainfooter">
+         <div class="footer-middle">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                     <!--Lennart: Her er vores første colmumn. mailto: trigger dig til mail. og tel: trigger dig til opkald. &nbsp; bruges til at lave et tomt felt. -->
+                     <div class="footer-pad">
+                        <h4><img src="images/Logo1.png" alt="">Colour IT</h4>
+                        <ul class="list-unstyled">
+                           <li>Via University College</li>
+                           <li>8700 Horsens</li>
+                           <li>CVR: 12345678</li>
+                           <li>&nbsp;</li>
+                           <li><h5>Kontakt</h5></li>
+                           <li>&nbsp;</li>
+                           <li>
+                              <img src="images/mail.png" alt="mail"> <a href="mailto:ColourIT@Email.com">ColourIT@Email.com</a>
+                           </li>
+                           <li>&nbsp;</li>
+                           <li>
+                              <img src="images/phone-24.png" alt="phone"><a href="tel:123-456-7891">123-456-7891</a>
+                           </li>
+                           <li>&nbsp;</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                     <!--Lennart: Her er vores colmumn 2, href, bruges til at linke til vores sider-->
+                     <div class="footer-pad">
+                        <h4>Menu</h4>
+                        <br>
+                        <ul class="list-unstyled">
+                           <li><a href="index.html">Hjem</a></li>
+                           <li><a href="Service.html">Service</a></li>
+                           <li><a href="Udviklingsteamet.html">Udviklingsteamet</a></li>
+                           <li><a href="Projekter.html">Projekter</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                     <!--Lennart: Her er vores colmumn 3, her bruges en input funktion, samt en submit knap til mail-->
+                     <div class="footer-pad">
+                        <h4>Nyhedsbrev</h4>
+                        <br>
+                        <p>Tilmeld dig vores nyhedsbrev her!</p>
+                        <input type="text" class="form-control" placeholder="Email...">
+                        <br>
+                        <input type="Submit">
+                        <br>
+                     </div>
+                  </div>
+                  <!--Lennart: Her er vores colmumn 4, hvor vi benytter os af button class, som bliver anvendt vha. bootstrap. -->
+                  <div class="col-md-3">
+                    <br>
+                     <h4>Følg os <strong>HER!</strong></h4>
+                     <!--Abdullahi: Her har vi linket vores sociale medier . -->
+                     <br>
+                           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                           <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+                          <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+                          <a href="http://www.youtube.com/" class="fa fa-youtube"></a>
+               </div>
+               </div>
+               <!--Lennart: &copy bruges til at lave et c icon.  -->
+               <div class="row">
+                  <div class="col-md-12 copy">
+                     <p class="text-center">&copy; Copyright 2020 - Colour IT Inc.  All rights reserved.</p>
+                  </div>
+            </div>
+         </div>
+         </div>
+      </footer>
+   </body>
+</html>
